@@ -3231,12 +3231,9 @@ function assignPullRequest({ gh, context }) {
             issue_number,
             assignees
         });
-        const status = response.headers.status;
-        core.debug(`${response}`);
-        core.debug(`${response.headers}`);
-        core.debug(JSON.stringify(response));
+        const status = response.status;
         core.debug(`Assigning #${pull_number} to '${assignees[0]}' returned '${status}'.`);
-        return status.startsWith('201');
+        return response.status == 201;
     });
 }
 run();
