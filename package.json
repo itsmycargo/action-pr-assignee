@@ -1,5 +1,5 @@
 {
-  "name": "@augustohp/action-pr-assignee",
+  "name": "@itsmycargo/action-pr-assignee",
   "version": "1.0.1",
   "description": "Assigns a PR tot he person who opened it.",
   "author": "augusto.hp@gmail.com",
@@ -15,11 +15,11 @@
     "all": "npm run build && npm run format && npm run lint && npm run pack && npm test"
   },
   "bugs": {
-    "url": "https://github.com/augustohp/action-pr-assignee/issues"
+    "url": "https://github.com/itsmycargo/action-pr-assignee/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/augustohp/action-pr-assignee.git"
+    "url": "git+https://github.com/itsmycargo/action-pr-assignee.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",

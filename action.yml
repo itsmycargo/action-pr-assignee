@@ -13,10 +13,6 @@ inputs:
       Authentication token to fetch Pull Request information, will atuomatically
       be retrieved from environment if none is passed.
     default: ${{ github.token }}
-  require_assignee:
-    description: >
-      If no assignee can be defined, prevent merge.
-    default: true
 runs:
   using: 'node12'
   main: 'dist/index.js'

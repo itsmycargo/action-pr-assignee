@@ -8,17 +8,12 @@ async function run(): Promise<void> {
       return
     }
     const token = core.getInput('token', {required: true})
-    const requireAssignee = core.getInput('require_assignee', {required: true})
     const gh = new github.GitHub(token)
 
     const isSomeoneAssigned = await assignPullRequest({
       gh,
       context: github.context
     })
-    if (!isSomeoneAssigned && requireAssignee) {
-      core.setFailed('Could not assign anyone to the PullRequest.')
-      return
-    }
   } catch (error) {
     core.setFailed(error.message)
   }
@@ -64,6 +59,9 @@ async function assignPullRequest({
   })
 
   const status = response.headers.status
+  core.debug(`${response}`)
+  core.debug(`${response.headers}`)
+  core.debug(JSON.stringify(response))
   core.debug(
     `Assigning #${pull_number} to '${assignees[0]}' returned '${status}'.`
   )
